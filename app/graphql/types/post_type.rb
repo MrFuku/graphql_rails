@@ -8,5 +8,9 @@ module Types
     field :body, String
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+
+    def label
+      Loaders::AssociationLoader.for(Post, :label).load(object)
+    end
   end
 end

@@ -2,6 +2,8 @@ class GraphqlRailsSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
+  use GraphQL::Batch
+
   # For batch-loading (see https://graphql-ruby.org/dataloader/overview.html)
   use GraphQL::Dataloader
 
